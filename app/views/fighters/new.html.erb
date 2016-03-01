@@ -1,0 +1,28 @@
+<% if @fighter.errors.any? %>
+  <div id="error-explanation">
+    <p>There was <%= pluralize(@fighter.errors.count, 'error') %>.</p>
+    <ul>
+      <% @fighter.errors.full_messages.each do |msg| %>
+        <li><%=msg%></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @fighter do |f| %>
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :fname, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :lname, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.submit "Add fighter" %>
+  </p>
+<% end %>
