@@ -1,5 +1,38 @@
+<% if @fighter.errors.any? %>
+  <div id="error-explanation">
+    <p>There was <%= pluralize(@fighter.errors.count, 'error') %>.</p>
+    <ul>
+      <% @fighter.errors.full_messages.each do |msg| %>
+        <li><%=msg%></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <p><strong><%= @fighter.fname %> <%= @fighter.lname %></strong></p>
 
 <% unless @fighter.description.empty? %>
   <p><%= @fighter.description %></p>
+<% end %>
+
+<% unless @fighter.skills.empty? %>
+  <% @fighter.skills.each do |s| %>
+    <p><%= s.name %>: <%= s.level %></p>
+  <% end %>
+<% end %>
+
+<%= form_for([@fighter, @fighter.skills.build]) do |f| %>
+  <p>
+    <%= f.label :skill_name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :skill_level %>
+    <%= f.number_field :level, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.submit "Add skill" %>
+  </p>
 <% end %>
