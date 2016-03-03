@@ -2,8 +2,7 @@ require 'test_helper'
 
 class FighterTest < ActiveSupport::TestCase
   def setup
-    @fighter = Fighter.new(fname: "Foo", lname: "Fighter",
-                           description: "Mysterious aerial phenomena.")
+    @fighter = fighters(:foo_fighter)
   end
 
   test "valid fighter should be valid" do
@@ -25,7 +24,7 @@ class FighterTest < ActiveSupport::TestCase
     assert @fighter.valid?
   end
 
-  test "first name shoud not be too long" do
+  test "first name should not be too long" do
     @fighter.fname = "x" * 21
     assert_not @fighter.valid?
   end
@@ -47,4 +46,11 @@ class FighterTest < ActiveSupport::TestCase
     agent1.save
     assert_not agent2.valid?
   end
+
+  # test "fighter should not have too much skills" do
+  #   9.times do |i|
+  #     @fighter.skills.build(name: "Skill number #{i}", level: 1)
+  #   end
+  #   assert_not @fighter.valid?
+  # end
 end
