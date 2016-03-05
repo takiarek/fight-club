@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305104752) do
+ActiveRecord::Schema.define(version: 20160305111126) do
 
   create_table "fighters", force: :cascade do |t|
     t.string   "fname"
     t.string   "lname"
     t.text     "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.float    "experience",          default: 0.0
   end
 
   create_table "fights", force: :cascade do |t|
