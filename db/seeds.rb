@@ -7,27 +7,22 @@ king = Fighter.create(fname: "The",
                avatar: File.new("#{Rails.root.join('db','seed_avatars','king.png')}"))
 child = Fighter.create(fname: "Inner",
                lname: "Child",
-               description: "Lorem ipsum dolor sit amet, consectetur adipisicing
-                             elit, sed do eiusmod tempor incididunt ut labore et
-                             dolore magna aliqua.",
+               description: "Inner Child is sensitive, curious and creative.
+                             It soaks up every impression.",
                avatar: File.new("#{Rails.root.join('db','seed_avatars','child.jpg')}"))
 death = Fighter.create(fname: "THE",
                lname: "DEATH",
-               description: "Lorem ipsum dolor sit amet, consectetur adipisicing
-                             elit, sed do eiusmod tempor incididunt ut labore et
-                             dolore magna aliqua.",
+               description: "DEATH remids you about passing time.",
                avatar: File.new("#{Rails.root.join('db','seed_avatars','death.jpg')}"))
 realist = Fighter.create(fname: "The",
                lname: "Realist",
-               description: "Lorem ipsum dolor sit amet, consectetur adipisicing
-                             elit, sed do eiusmod tempor incididunt ut labore et
-                             dolore magna aliqua.",
+               description: "Realist has the knowledge and he uses logic to ensure
+                             that everything is in order.",
                avatar: File.new("#{Rails.root.join('db','seed_avatars','realist.png')}"))
 jester = Fighter.create(fname: "The",
                lname: "Jester",
-               description: "Lorem ipsum dolor sit amet, consectetur adipisicing
-                             elit, sed do eiusmod tempor incididunt ut labore et
-                             dolore magna aliqua.",
+               description: "Jester doesn't respect conventions. His job is to
+                             maintain your sense of freedom.",
                avatar: File.new("#{Rails.root.join('db','seed_avatars','jester.jpg')}"))
 5.times do |i|
   fname = "Sub"
