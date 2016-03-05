@@ -1,5 +1,21 @@
+<h2>Which Sub-Personality has the biggest impact on your decisions?</h2>
+
 <div class="all-fighters">
   <% @fighters.each do |f| %>
-    <p><%= f.fname %> <%= f.lname %></p>
+    <div class="fighter">
+      <div class="avatar">
+        <%= image_tag f.avatar.url(:thumb) %>
+      </div>
+      <div class="fighter-info">
+        <p>
+          <strong>
+            <%= link_to "#{f.fname} #{f.lname}", fighter_path(f.id) %>
+          </strong>
+        </p>
+        <p>
+          <%= f.description %>
+        </p>
+      </div>
+    </div>
   <% end %>
 </div>

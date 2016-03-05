@@ -1,45 +1,58 @@
-<% if @fighter.errors.any? %>
+<% if @skill.errors.any? %>
   <div id="error-explanation">
-    <p>There was <%= pluralize(@fighter.errors.count, 'error') %>.</p>
+    <p>There was <%= pluralize(@skill.errors.count, 'error') %>.</p>
     <ul>
-      <% @fighter.errors.full_messages.each do |msg| %>
+      <% @skill.errors.full_messages.each do |msg| %>
         <li><%=msg%></li>
       <% end %>
     </ul>
   </div>
 <% end %>
 
-<p>
-  <%= image_tag @fighter.avatar.url(:thumb) %>
-  <strong><%= @fighter.fname %> <%= @fighter.lname %></strong>
-</p>
+<h2><%= @fighter.fname %> <%= @fighter.lname %></h2>
+<div class="fighter">
+  <div class="avatar">
+    <%= image_tag @fighter.avatar.url(:thumb) %>
+  </div>
+  <div class="fighter-info">
+    <% unless @fighter.description.blank? %>
+      <div class="decription">
+        <%= @fighter.description %>
+      </div>
+    <% end %>
+    <div class="stats">
+      <p>wins: <%= @fighter.wins.count %></p>
+      <p>losses: <%= @fighter.losses.count %></p>
+    </div>
+    <div class="experience">
+      <p>
+        <%= @fighter.experience %> exp points
+      </p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Experience: </strong><%= @fighter.experience %>
-</p>
-
-<% unless @fighter.description.blank? %>
-  <p><%= @fighter.description %></p>
-<% end %>
-
-<% unless @fighter.skills.empty? %>
-  <% @fighter.skills.each do |s| %>
-    <p><%= s.name %>: <%= s.level %></p>
+<div class="skills">
+  <h3>Skills</h3>
+  <% unless @fighter.skills.empty? %>
+    <% @fighter.skills.each do |s| %>
+      <p><%= s.name %>: <%= s.level %></p>
+    <% end %>
   <% end %>
-<% end %>
+  <h4>Add skill</h4>
+  <%= form_for([@fighter, @fighter.skills.build]) do |f| %>
+    <p>
+      <%= f.label :skill_name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </p>
 
-<%= form_for([@fighter, @fighter.skills.build]) do |f| %>
-  <p>
-    <%= f.label :skill_name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </p>
+    <p>
+      <%= f.label :skill_level %> (0 - 5)
+      <%= f.number_field :level, class: 'form-control' %>
+    </p>
 
-  <p>
-    <%= f.label :skill_level %>
-    <%= f.number_field :level, class: 'form-control' %>
-  </p>
-
-  <p>
-    <%= f.submit "Add skill" %>
-  </p>
-<% end %>
+    <p>
+      <%= f.submit "Add skill", class: "btn btn-primary" %>
+    </p>
+  <% end %>
+</div>

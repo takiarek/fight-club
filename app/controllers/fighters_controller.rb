@@ -5,6 +5,7 @@ class FightersController < ApplicationController
 
   def show
     @fighter = Fighter.find(params[:id])
+    @skill = @fighter.skills.build
   end
 
   def new

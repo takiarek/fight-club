@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root 'fighters#index'
-  # resources :fighters, except: [:update, :destroy]
-  # resources :skills, only: [:create]
   resources :fighters do
     resources :skills
   end

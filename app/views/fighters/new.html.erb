@@ -19,6 +19,7 @@
     <%= f.text_field :lname, class: 'form-control' %>
   </p>
   <p>
+    <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </p>
   <p>
@@ -26,6 +27,6 @@
     <%= f.text_area :description, class: 'form-control' %>
   </p>
   <p>
-    <%= f.submit "Add fighter" %>
+    <%= f.submit "Add fighter", class: "btn btn-primary" %>
   </p>
 <% end %>

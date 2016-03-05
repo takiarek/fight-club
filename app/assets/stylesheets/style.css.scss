@@ -1,0 +1,44 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.panel {
+  padding: 10px;
+  margin: 10px;
+  border: solid;
+}
+
+.fighter {
+  clear: both;
+  margin: 20px;
+  padding: 10px 0;
+  .avatar{
+    width: 100px;
+    margin-right: 20px;
+    float: left;
+  }
+  .fighter-info{
+    width: 400px;
+    float: left;
+    .stats, .experience{
+      width:100px;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    .stats{
+      p:nth-child(1){
+        color: green;
+      }
+      p:nth-child(2){
+        color: red;
+      }
+    }
+    .experience{
+      color: blue;
+    }
+  }
+}
+
+.skills{
+  clear: both;
+  padding: 10px 0;
+}

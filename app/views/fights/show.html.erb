@@ -1,7 +1,9 @@
 <p>
-  <strong>Winner: </strong><%= @winner.fname %> <%= @winner.lname %>
+  <strong>Winner: </strong>
+  <%= link_to "#{@winner.fname} #{@winner.lname}", fighter_path(@winner.id) %>
 </p>
 
 <p>
-  <strong>Loser: </strong><%= @loser.fname %> <%= @loser.lname %>
+  <strong>Loser: </strong>
+  <%= link_to "#{@loser.fname} #{@loser.lname}", fighter_path(@loser.id) %>
 </p>
