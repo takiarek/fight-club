@@ -25,10 +25,6 @@ class FightsController < ApplicationController
   end
 
   private
-    # def fight_params
-    #   params.require(:fighter).permit(:fname, :lname, :description)
-    # end
-
     def fight(fighter_1,fighter_2)
       power_1 = fighter_1.experience
       power_2 = fighter_2.experience

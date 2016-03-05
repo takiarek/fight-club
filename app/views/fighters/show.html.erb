@@ -10,7 +10,7 @@
 <% end %>
 
 <p>
-  <%= image_tag @fighter.avatar.url %>
+  <%= image_tag @fighter.avatar.url(:thumb) %>
   <strong><%= @fighter.fname %> <%= @fighter.lname %></strong>
 </p>
 
@@ -18,7 +18,7 @@
   <strong>Experience: </strong><%= @fighter.experience %>
 </p>
 
-<% unless @fighter.description.empty? %>
+<% unless @fighter.description.blank? %>
   <p><%= @fighter.description %></p>
 <% end %>
 
