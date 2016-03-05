@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305111126) do
+ActiveRecord::Schema.define(version: 20160305221643) do
 
   create_table "fighters", force: :cascade do |t|
     t.string   "fname"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160305111126) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.float    "experience",          default: 0.0
+    t.integer  "wins_count"
   end
 
   create_table "fights", force: :cascade do |t|

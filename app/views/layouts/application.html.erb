@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FightClub</title>
+  <title>Ego Fight Club</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,8 +11,8 @@
 <div class="container">
   <div class="col-md-2 panel">
     <ul class="nav center">
-      <li><%= link_to "ranking page", fighters_path %></li>
-      <li><%= link_to "add fighter", new_fighter_path %></li>
+      <li><%= link_to "ranking page", root_path %></li>
+      <li><%= link_to "add sub-personality", new_fighter_path %></li>
       <li><%= link_to "make a fight", new_fight_path %></li>
     </ul>
   </div>

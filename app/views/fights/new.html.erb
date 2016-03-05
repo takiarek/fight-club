@@ -1,22 +1,5 @@
-
-
-<!-- <div class="all-fighters">
-  <%= form_for @fight do |x| %>
-    <% @fighters.each do |f| %>
-      <p>
-        <%= f.fname %> <%= f.lname %>
-        <%= check_box_tag "fighter_ids[]", f.id, false, :id => "fighter_#{f.id}" %>
-      </p>
-    <% end %>
-
-    <p>
-      <%= x.submit "Add fight" %>
-    </p>
-  <% end %>
-</div> -->
-
+<h2>Choose two Sub-Personalities</h2>
 <div class="all-fighters">
-  <h2>Choose two fighters</h2>
   <%= form_for @fight do |x| %>
     <%= x.submit "Accept", class: "btn btn-primary" %>
     <% @fighters.each do |f| %>

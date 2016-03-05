@@ -1,6 +1,6 @@
 class FightersController < ApplicationController
   def index
-    @fighters = Fighter.all
+    @fighters = Fighter.order(wins_count: :desc)
   end
 
   def show
